@@ -4,14 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Warehouse
+namespace Retail
 {
-
-    class Publisher
+    class RetWare_Publish
     {
         static int id = 0;
 
-        public void Publish() {
+        public static void Publish()
+        {
             using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
                 var input = "";
@@ -21,8 +21,8 @@ namespace Warehouse
                     bus.Publish(new Product
                     {
                         ID = id++,
-                        Name = "ProductName"+ id,
-                        Description = "ProductDescription"+ id,
+                        Name = "ProductName" + id,
+                        Description = "ProductDescription" + id,
                         Quantity = 5
                     });
                 }

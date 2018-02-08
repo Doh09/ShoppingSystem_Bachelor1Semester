@@ -6,7 +6,7 @@ namespace Retail
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            RetWare_Publish.Publish();
         }
     }
 }
